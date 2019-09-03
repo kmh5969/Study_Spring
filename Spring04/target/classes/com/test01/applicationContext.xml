@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="today" class="java.util.Date"/>
+	
+	<bean id="tomorrow" class="java.util.Date">
+		<property name="date" value="23"></property>
+	</bean>
+
+	<bean id="bar" class="com.test01.Bar"/>
+	
+	<bean id="foo" class="com.test01.Foo" lazy-init="true">
+		<constructor-arg ref="today"></constructor-arg>
+		<property name="bar" ref="bar"></property>
+		<property name="date" ref="tomorrow"></property>
+		<property name="num">
+			<value type="short">2</value>
+		</property>
+		<property name="student">
+			<array>
+				<value>kim</value>
+				<value>Lee</value>
+				<value>Park</value>
+			</array>
+		</property>
+		<property name="info">
+			<list>
+				<value>봄</value>
+				<value>여름</value>
+				<value>가을</value>
+				<value>겨울</value>
+			</list>
+		</property>
+		<property name="season">
+			<map>
+				<entry key="1" value="봄"></entry>
+				<entry key="2" value="여름"></entry>
+				<entry key="3" value="가을"></entry>
+				<entry>
+					<key>
+						<value>4</value>
+					</key>
+					<value>겨울</value>
+				</entry>
+			</map>
+		</property>
+		<property name="score">
+			<list>
+				<bean class="com.test01.Score">
+					<constructor-arg value="홍길동"></constructor-arg>
+					<constructor-arg value="95"></constructor-arg>
+					<constructor-arg value="85"></constructor-arg>
+					<constructor-arg value="79"></constructor-arg>
+				</bean>
+				<ref bean="sc"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sc" class="com.test01.Score">
+		<constructor-arg value="이순신"></constructor-arg>
+		<constructor-arg value="100"></constructor-arg>
+		<constructor-arg value="80"></constructor-arg>
+		<constructor-arg value="95"></constructor-arg>
+	</bean>
+
+</beans>

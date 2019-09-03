@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Yeong" class="com.test02.BirthDto">
+		<property name="name" value="Yeong"></property>
+		<property name="birth" value="870114"></property>
+	</bean>
+	
+	<bean id="Beom" class="com.test02.BirthDto">
+		<constructor-arg name="name" value="Beom"></constructor-arg>
+		<constructor-arg name="birth" value="941126"></constructor-arg>
+	</bean>
+	
+	<bean id="Hoon" class="com.test02.BirthDto">
+		<property name="name" value="Hoon"></property>
+		<property name="birth" value="911103"></property>
+	</bean>
+	
+</beans>

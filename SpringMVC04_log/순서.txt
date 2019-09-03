@@ -1,0 +1,19 @@
+
+1. pom.xml - ojdbc6.jar, mybatis, mybatis-spring, commons-dbcp, spring-orm
+2. web.xml - servlet-mapping : url-pattern encodingFilter
+3. WEB-INF/spring/sqls/test.sql
+4. dto, dao, biz
+5. src/main/resources/sqls/mapper.xml
+6. WEB-INF/spring/sqls/config.xml
+7. src/main/resources/properties/db.properties
+8. applicationContext.xml
+-------------------------(AOP)
+9. pom.xml - org.aspectj/aspectjweaver, aspectjrt
+10. com.mvc.hello.common.aop/LogAop.java 생성
+11. aop-context.xml
+12. web.xml
+13. src/main/resources/log4j.xml (pachage 추가, root logger 를 trace)
+-------------------------(filter)
+14. pom.xml - commons.lang3
+15. com.mvc.hello.common.filter/LogFilter.java(javax.servlet.Filter)
+16. web.xml
