@@ -11,7 +11,7 @@ public class FileValidator implements Validator {
 	public boolean supports(Class<?> clazz) {
 		return false;
 	}
-
+	//Dto 커맨드 객체에 대한 값 검증을 지원하는 지의 여부를 리턴한다
 	@Override
 	public void validate(Object target, Errors errors) {
 		UploadFile file = (UploadFile) target;
@@ -20,5 +20,6 @@ public class FileValidator implements Validator {
 			errors.rejectValue("file","errorCode","Pleas select a file");
 		}
 	}
+	
 
 }
